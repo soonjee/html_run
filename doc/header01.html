@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header 01 - 가로배치</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/basic01.css">
+    <style>
+        .header {
+            background: #f7f7f7;
+            line-height: 100px;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header nav>ul {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer {
+            padding: 30px 0 50px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="container">
+                <h1>
+                    <a href="/">
+                        <img src="../img/grafflogo.png" alt="">
+                    </a>
+                </h1>
+                <nav>
+                    <ul>
+                        <li><a href="">meun01</a></li>
+                        <li><a href="">meun02</a></li>
+                        <li><a href="">meun03</a></li>
+                        <li><a href="">meun04</a></li>
+                        <li><a href="">meun05</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="main_visual">
+
+            </div>
+        </main>
+        <footer class="footer">
+            &copy basic template.
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다단메뉴 3</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/basic01.css">
+    <style>
+        .header {
+            line-height: 100px;
+        }
+
+        .header .container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header .gnb {
+            margin: 0 0 0 auto;
+        }
+
+        .header .gnb>ul {
+            display: flex;
+        }
+
+        /*  border: 5px solid #000;
+            padding: 50px; => 자주하는 실수래. 패딩 안먹힌다잉. */
+        .header .gnb>ul>li {
+            position: relative;
+            padding: 0 25px;
+        }
+
+        .header .gnb>ul>li a {
+            display: block;
+            padding: 0 25px;
+        }
+
+        /* 띄운 후 좌표를 줘야 함, 그리고 띄웠으니까 기준을 잡아줘야 됨! 
+           position:absolute 일때 좌표가 정해지면 높이도 먹힌다.*/
+        .header .gnb>ul ul {
+            display: none;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            z-index: 999;
+            width: 120px;
+            line-height: 40px;
+            transform: translateX(-50%);
+            text-align: center;
+            background: rgb(0, 252, 151);
+        }
+
+        .header .gnb>ul>li:hover ul {
+            display: block;
+        }
+
+        .mbtn {
+            display: none;
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            font-size: 30px;
+            background: #f7f7f7;
+            padding: 5px;
+            line-height: 1;
+        }
+
+        @media (max-width:768px) {
+            body {
+                background: #369;
+            }
+
+            .header {
+                line-height: 100px;
+            }
+
+            .header .container {
+                display: flex;
+                width: auto;
+                margin: 0 auto;
+            }
+
+            .header .gnb {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                z-index: 999;
+                width: calc(100% - 90px);
+                height: 100vh;
+                background: #fff;
+                margin: 0 0 0 auto;
+                transition: 0.5s;
+            }
+
+            .header .gnb.on {
+                left: 0;
+            }
+
+            .header .gnb>ul {
+                display: flex;
+                flex-direction: column;
+                line-height: 40px;
+            }
+
+            /*  border: 5px solid #000;
+            padding: 50px; => 자주하는 실수래. 패딩 안먹힌다잉. */
+            .header .gnb>ul>li {
+                position: relative;
+            }
+
+            .header .gnb>ul>li a {
+                display: block;
+                padding: 0 25px;
+            }
+
+            /* 띄운 후 좌표를 줘야 함, 그리고 띄웠으니까 기준을 잡아줘야 됨! 
+           position:absolute 일때 좌표가 정해지면 높이도 먹힌다.*/
+            .header .gnb>ul ul {
+                display: none;
+                position: static;
+                top: 100px;
+                left: 50%;
+                z-index: 999;
+                width: auto;
+                line-height: 40px;
+                transform: translateX(0);
+                text-align: center;
+                background: rgb(0, 252, 151);
+            }
+
+            /* 모바일에선 hover가 안 먹히니까  display: none;해야됨.  */
+            .header .gnb>ul>li:hover ul {
+                display: none;
+            }
+
+            .mbtn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="container">
+                <h1>
+                    <a href="/">
+                        <img src="../img/grafflogo.png" alt="">
+                    </a>
+                </h1>
+                <!-- gnb : 글로벌 네비게이션 바 -->
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="">MENU01</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">MENU02</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">MENU03</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">MENU04</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">MENU05</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">MENU06</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mbtn">
+                    <i class="xi-bars"></i>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="main_visual">
+
+            </div>
+        </main>
+
+        <footer class="footer">
+            &copy basic template.
+        </footer>
+    </div>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $('.gnb>ul>li>a').on('click', function (e) {
+                if ($('.gnb').hasClass('on')) {
+                    e.preventDefault();
+                    // $('.gnb>ul>li>a').next().hide();
+                    $(this).next().stop().slideToggle();
+                    $(this).parent().siblings().find('ul').stop().slideUp();
+                }
+            });
+
+            $(window).on('resize', function () {
+                $('.gnb').removeClass('on');
+                $('gnb>ul ul').removeAttr('style');
+            });
+
+            $('.mbtn').on('click', function () {
+                $('.gnb').toggleClass('on')
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

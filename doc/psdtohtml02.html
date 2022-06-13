@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>psd to html 02</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        #header {
+            line-height: 100px;
+        }
+
+        #header .container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #header nav {
+            margin: 0 0 0 auto;
+        }
+
+        #header nav ul {
+            display: flex;
+            gap: 40px;
+        }
+
+        #header nav>ul a {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: -0.025em;
+        }
+
+        #main_visual {
+            height: 500px;
+            background: url(../img/mainvisual01.jpg) no-repeat center center/cover;
+        }
+
+        #main_visual .slogan {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 160px 0 0 190px;
+        }
+
+        #main_visual .slogan h2 {
+            font-size: 60px;
+            font-weight: 700;
+            text-shadow: 0 0 3px #000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- &amp; 인식못해서 하는 태그 -->
+    <div class="wrap">
+        <header id="header">
+            <div class="container">
+                <h1>
+                    <a href="/">
+                        <img src="../img/grafflogo.png" alt="">
+                    </a>
+                </h1>
+                <nav>
+                    <ul>
+                        <li><a href="">하이주얼리</a></li>
+                        <li><a href="">주얼리 컬렉션</a></li>
+                        <li><a href="">컬렉션 &amp; 브라이덜</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div id="main_visual">
+                <div class="slogan">
+                    <h2>slogan</h2>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer">
+
+        </footer>
+    </div>
+
+
+
+
+</body>
+
+</html>

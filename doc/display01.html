@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>displayl / display 01</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* inline 요소는 width, height, 상하 margin과 padding 값을 줄 수가 없다. */
+        .inline span {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 0, 0, 0.3);
+            color: #fff;
+            padding: 50px 0;
+            margin: 50px 0;
+        }
+
+        /* inline 요소를 block요소로 바꿈. */
+        .inlineToBlock span {
+            display: block;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 0, 0, 0.3);
+            color: #fff;
+            padding: 30px 0;
+            margin: 30px 0;
+        }
+
+        /*inline-block 요소의 부모에 text-align:center로 박스를 가로로 배열할 수 있다.
+          inline-block 박스 사이의 간격을 붙이려면 font: size 0; 을 해주어야 한다.
+        */
+        .inlineToInlineblock {
+            text-align: center;
+            font-size: 0;
+        }
+
+        /* inline 요소를 inline-block요소로 바꿈
+        박스 사이의 간격이 4px 정도 생긴다.
+        */
+        .inlineToInlineblock span {
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            font-size: 20px;
+            background: rgba(255, 0, 0, 0.3);
+            color: #fff;
+            padding: 30px 0;
+            margin: 30px 0;
+        }
+
+        .block {
+            background: #ff0;
+        }
+
+        .block div {
+            display: inline;
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            background: rgba(255, 0, 0, 0.3);
+            color: #fff;
+            padding: 30px 0;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="inline">
+        <span>span01</span>
+        <span>span02</span>
+        <span>span03</span>
+        <span>span04</span>
+        <span>span05</span>
+    </section>
+
+    <section class="inlineToBlock">
+        <span>span01</span>
+        <span>span02</span>
+        <span>span03</span>
+        <span>span04</span>
+        <span>span05</span>
+    </section>
+
+    <section class="inlineToInlineblock">
+        <span>span01</span>
+        <span>span02</span>
+        <span>span03</span>
+        <span>span04</span>
+        <span>span05</span>
+    </section>
+    <section class="block">
+        <div>box01</div>
+        <div>box02</div>
+        <div>box03</div>
+        <div>box04</div>
+        <div>box05</div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position01</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            height: 100px;
+            background: rgba(255, 0, 0, 0.3);
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+        }
+
+        /* 보통 div 이렇게 선택자 안 부름. 자주 쓰이니까 이렇게 쓰는 거 자제하기 */
+        /* position: relative ; 좌표를 가지는 position 상태가 된다.
+           일반적인 position의 floating이나 width의 변화가 없다. */
+
+
+        .position-relative div {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            width: 100px;
+        }
+
+        /* position : absolute; 뜬다. 쪼그라든다. 기준점이 없어져서 body를 기준으로 포개진다.
+           block의 속성을 가지게 된다. 
+           position : absolute; 의 기준을 부모요소의 position : relative, absolute, fixed로 기준을 만들어 줄 수 있다.
+        */
+
+        .position-absolute {
+            position: relative;
+            margin: 0 0 100vh 0;
+        }
+
+
+        .position-absolute span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+        }
+
+        /* z-index로 흐름의 순서를 바꿔줄 수 있다. 정수를 쓴다.*/
+        .position-absolute span:nth-child(1) {
+            top: 20px;
+            left: 20px;
+        }
+
+        .position-absolute span:nth-child(2) {
+            top: 40px;
+            left: 40px;
+            z-index: 1;
+        }
+
+        .position-absolute span:nth-child(3) {
+            top: 60px;
+            left: 60px;
+        }
+
+        .position-absolute span:nth-child(4) {
+            top: 80px;
+            left: 80px;
+        }
+
+        .position-absolute span:nth-child(5) {
+            top: 100px;
+            left: 100px;
+        }
+
+        /* position-fixed는 기준이 없다. (viewport를 기준으로 한다.)
+        스크롤바가 생기지 않는다.
+        */
+        .position-fixed {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+        }
+
+        .position-sticky {
+            position: sticky;
+            top: 0;
+            left: 0;
+            background: #333;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="position-sticky">
+        header
+    </header>
+    <section class="position-relative">
+        <div class="box">01</div>
+        <div class="box">02</div>
+        <div class="box">03</div>
+        <div class="box">04</div>
+        <div class="box">05</div>
+    </section>
+    <section class="position-absolute">
+        <span class="box">01</span>
+        <span class="box">02</span>
+        <span class="box">03</span>
+        <span class="box">04</span>
+        <span class="box">05</span>
+        <button class="position-fixed">FIXED</button>
+    </section>
+</body>
+
+</html>

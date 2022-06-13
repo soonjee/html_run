@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 박스 : box-model / 기본 박스 01</title>
+    <!-- 외부 스타일 시트 (External style sheet) -->
+    <link rel="stylesheet" href="">
+    <!-- 내부 스타일 시트 (Internal style sheet) -->
+    <style>
+        /* 선택자 */
+        div {
+            width: 1200px;
+            background: rgb(0, 0, 0, 0.3);
+            /*
+             margin, padding, inset
+             축약형의 방향 : 상 우 하 좌 (4)
+             축약형의 방향 : 상 좌우 하 (3)
+             축약형의 방향 : 상하 좌우 (2)
+             */
+            margin: 50px 0;
+            /*
+            박스 사이즈의 margin은 겹침 현상이 생긴다.
+            부모 block과 첫 번째 자식 block사이에도 margin은 겹침 현상이 생긴다.
+            */
+        }
+
+        div:nth-child(1) {
+            padding: 0 100px;
+            /* block의 안 쪽으로 padding과 border를 가둔다. for layout */
+            box-sizing: border-box;
+            /* 박스는 padding과 border를 주면 1200px width에서 1400~으로 늘어나는데
+                box-sizing: border-box;를 주면 사이즈가 1200px 로 고정된다. */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 인라인 스타일 (Inline style) style"" -->
+    <div>BOX 01</div>
+    <div>BOX 02</div>
+    <div>BOX 03</div>
+
+    <!-- vs:code : alt + shift + 방향키 -->
+
+    <h2> box의 기본성질 (display:block)</h2>
+    <hr />
+    <ul>
+        <li>투명하다.</li>
+        <li>width : auto 자동으로 늘어난다. / height : auto</li>
+        <li>Y축으로 쌓여간다.</li>
+        <li>block 옆에 block이 오지 못 하게 한다.</li>
+    </ul>
+
+
+    <ol>
+        <li>태그는 크게 inline /block인 걸로 나뉜다.</li>
+        <li>글자 그림 등 내용에 관여하는 태그<br />
+            <span>span</span>, <strong>strong</strong>, <em>em</em>, <i>icon</i>,
+            <button>btn</button>, <input> 인라인 속성을 가지고 나머지는 block 속성을 가진다.
+        </li>
+        <li>block 속성은 width height margin padding 값을 가지고, inline 속성은 좌우 margin padding 만을 가진다.</li>
+        <li>inline 상하 padding의 경우 background를 포함하여 padding이 적용된 것 처럼 보인다.</li>
+    </ol>
+    <hr />
+
+    <p>
+        css는 레이아웃을 만들어준다. <br />
+        인라인 스타일 (Inline style sheet)이 외부/내부 스타일 보다 우선한다. (계급이 높다.) <br />
+        javascript의 적용범위는 인라인 스타일 (Inline style)이므로 외부/내부 스타일 보다 우선한다. <br />
+        style name role : attribute, property / props(리액트).
+    </p>
+</body>
+
+</html>

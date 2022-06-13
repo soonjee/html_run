@@ -1,0 +1,148 @@
+img {
+    max-width: 100%;
+}
+
+/* 높이를 정해줘도 슬릭이 들어간 앞뒤버튼은 먹히지 않는다. */
+.visual_slider figure {
+    height: 600px;
+}
+
+.visual_slider .itm01 {
+    background: url(../img/mainvisual01.jpg) no-repeat center center/cover;
+}
+
+.visual_slider .itm02 {
+    background: url(../img/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.visual_slider .itm03 {
+    background: url(../img/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+
+.main {
+    position: relative;
+}
+
+
+.main .slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    color: #fff;
+    text-shadow: 0 0 4px #000;
+}
+
+.main .slick-dots {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.main .slick-dots li {
+    display: inline-block;
+    width: 100px;
+    height: 6px;
+    background: #333;
+    margin: 0 2px;
+}
+
+/* content: "1"; 이 되면 li 밑에 순서 생성 */
+.main .slick-dots li::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    background: #f00;
+}
+
+.main .slick-dots li.slick-active::after {
+    width: 100%;
+    transition: 2s;
+}
+
+.main .slick-dots li button {
+    display: none;
+
+
+}
+
+.main h2 {
+    font-size: 31px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.main p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* 야가 버튼이다.
+    겹치게하려면 띄우고 시작하자. */
+.main .slick-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+
+    font-size: 0;
+    border: none;
+    background: transparent;
+
+    width: 100px;
+    height: 100px;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+    opacity: 0.3;
+}
+
+.main .slick-arrow:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.main .slick-prev {
+    margin: 0 0 0 -700px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.main .slick-next {
+    margin: 0 0 0 700px;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.main .wheel {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 30px;
+    height: 55px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    font-size: 0;
+}
+
+.main .wheel span {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 12px;
+    background: #fff;
+    border-radius: 1px;
+    animation: wheel 0.5s infinite;
+}
+
+@keyframes wheel {
+    to {
+        top: 15px;
+    }
+}

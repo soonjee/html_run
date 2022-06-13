@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header 02 - 가로배치</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/basic01.css">
+    <style>
+        .header {
+            background: #f7f7f7;
+            line-height: 100px;
+        }
+
+        .header .container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header nav {
+            margin: 0 0 0 auto;
+        }
+
+        .header .btn {
+            margin: 0 0 0 40px;
+        }
+
+        .header .btn i {
+            font-size: 23px;
+            padding: 5px;
+            background: #ddd;
+            border-radius: 3px;
+            transform: translateY(5px);
+            cursor: pointer;
+        }
+
+        .header nav>ul {
+            display: flex;
+            gap: 40px;
+        }
+
+        .header nav>ul a {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="container">
+                <h1>
+                    <a href="/">
+                        <img src="../img/grafflogo.png" alt="">
+                    </a>
+                </h1>
+                <nav>
+                    <ul>
+                        <li><a href="">meun01</a></li>
+                        <li><a href="">meun02</a></li>
+                        <li><a href="">meun03</a></li>
+                        <li><a href="">meun04</a></li>
+                        <li><a href="">meun05</a></li>
+                    </ul>
+                </nav>
+                <div class="btn">
+                    <i class="xi-bars"></i>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="main_visual">
+
+            </div>
+        </main>
+        <footer class="footer">
+            &copy basic template.
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소 선택자. 01</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        section h2 {
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin: 0 0 10px 0;
+        }
+
+        section p {
+            font-size: 15px;
+            font-weight: 300;
+            letter-spacing: -0.025em;
+            margin: 0 0 30px 0;
+        }
+
+        section .container {
+            display: flex;
+            gap: 30px;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        section .container figure {
+            flex: 1;
+        }
+
+        section .container img {
+            max-width: 100%;
+        }
+
+        .psd01 h2::before {
+            content: "앞";
+        }
+
+        .psd01 h2::after {
+            content: "뒤";
+        }
+
+        .psd02 h2::after {
+            content: "";
+            display: block;
+            width: 200px;
+            height: 2px;
+            background: #f00;
+            margin: 20px auto;
+        }
+
+        .psd03 h2::before {
+            content: "";
+            display: inline-block;
+            width: 100px;
+            height: 3px;
+            background: rgb(3, 210, 131);
+            vertical-align: middle;
+            margin: -5px 10px 0 0;
+        }
+
+        .psd03 h2::after {
+            content: "";
+            display: inline-block;
+            width: 100px;
+            height: 3px;
+            background: rgb(3, 210, 131);
+            vertical-align: middle;
+            margin: -5px 0 0 10px;
+        }
+
+        /* 아이콘 사이트 적기 */
+        .psd04 h2::after {
+            content: "\e907";
+            font-family: xeicon !important;
+        }
+
+        .dot_list {
+            width: 300px;
+        }
+
+        /* hr도 해야한다. */
+        .dot_list>li {
+            position: relative;
+            text-align: left;
+            padding: 0 0 0 20px;
+            line-height: 1.2;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dot_list>li::before {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 0;
+            width: 4px;
+            height: 4px;
+            background: #f00;
+            border-radius: 50%;
+        }
+
+        .psd05 h2::before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 2.5px;
+            height: 40px;
+            background: rgb(197, 248, 222);
+            margin: 50px 50%;
+            transform: rotate(40deg);
+            border-radius: 90%;
+            z-index: 999;
+        }
+
+        .psd05 h2::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: rgb(0, 105, 45);
+            margin: 20px auto;
+            border-radius: 50% 0;
+            transform: rotate(-5deg);
+        }
+
+
+        .psd05 figure {
+            position: relative;
+        }
+
+        .psd05 figure::after {
+            content: attr(data-num);
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            background: rgb(109, 195, 143);
+            padding: 20px;
+            font-size: 30px;
+            color: #fff;
+            border-radius: 80%;
+            transition: 2s;
+        }
+
+        .psd05 figure:hover::after {
+            transform: scale(0.5);
+            transform-origin: left top;
+        }
+
+
+        hr.list_hr {
+            position: relative;
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 50px 0;
+            overflow: visible;
+        }
+
+        hr.list_hr::after {
+            content: "\e907";
+            font-family: xeicon !important;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-145deg);
+            background: #fff;
+            padding: 20px;
+            font-size: 20px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="psd01">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Rem, asperiores.</p>
+        <div class="container">
+            <figure>
+                <img src="../img/lesedilarona01.jpg" alt="">
+            </figure>
+            <figure>
+                <img src="../img/lesedilarona02.jpg" alt="">
+            </figure>
+            <figure>
+                <img src="../img/lesedilarona03.jpg" alt="">
+            </figure>
+        </div>
+    </section>
+
+    <section class="psd02">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Rem, asperiores.</p>
+        <div class="container">
+            <figure>
+                <img src="../img/lesedilarona01.jpg" alt="">
+            </figure>
+            <figure>
+                <img src="../img/lesedilarona02.jpg" alt="">
+            </figure>
+            <figure>
+                <img src="../img/lesedilarona03.jpg" alt="">
+            </figure>
+        </div>
+    </section>
+
+    <section class="psd03">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Rem, asperiores.</p>
+        <div class="container">
+            <figure>
+                <img src="../img/lesedilarona01.jpg" alt="">
+            </figure>
+            <figure>
+                <img src="../img/lesedilarona02.jpg" alt="">
+            </figure>
+            <figure>
+                <img src="../img/lesedilarona03.jpg" alt="">
+            </figure>
+        </div>
+    </section>
+
+    <section class="psd04">
+        <h2><i class="xi-arrow-right"></i>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus aliquam ullam quis exercitationem
+            laudantium cumque?</p>
+        <div class="container">
+            <ul class="dot_list">
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Rem, asperiores</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="psd05">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Libero debitis, obcaecati excepturi voluptate aperiam cum?
+        </p>
+        <div class="container">
+            <figure data-num="01">
+                <img src="../img/lesedilarona01.jpg" alt="">
+            </figure>
+
+            <figure data-num="02">
+                <img src="../img/lesedilarona02.jpg" alt="">
+            </figure>
+
+            <figure data-num="03">
+                <img src="../img/lesedilarona03.jpg" alt="">
+            </figure>
+        </div>
+    </section>
+
+    <section class="psd06">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Libero debitis, obcaecati excepturi voluptate aperiam cum?
+        </p>
+        <hr class="list_hr">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Libero debitis, obcaecati excepturi voluptate aperiam cum?
+        </p>
+        <div class="container">
+            <figure data-num="01">
+                <img src="../img/lesedilarona01.jpg" alt="">
+            </figure>
+
+            <figure data-num="02">
+                <img src="../img/lesedilarona02.jpg" alt="">
+            </figure>
+
+            <figure data-num="03">
+                <img src="../img/lesedilarona03.jpg" alt="">
+            </figure>
+        </div>
+    </section>
+
+</body>
+
+</html>

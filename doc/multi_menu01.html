@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다단메뉴 01</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .main_visual {
+            position: relative;
+            height: 500px;
+            background: rgb(66, 151, 100);
+        }
+
+        /* 다단메뉴 01 */
+        #header {
+            line-height: 100px;
+            background: rgb(231, 231, 231);
+        }
+
+        #header .container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav {
+            margin: 0 0 0 auto;
+            text-align: center;
+        }
+
+        nav>ul {
+            display: flex;
+        }
+
+        nav>ul>li>a {
+            display: block;
+            padding: 0 40px;
+        }
+
+        nav>ul ul a {
+            display: block;
+            line-height: 40px;
+        }
+
+        nav>ul>li {
+            position: relative;
+        }
+
+        nav>ul>li ul {
+            position: absolute;
+            inset: 100px auto auto 50%;
+            z-index: 999;
+            display: none;
+            width: 200px;
+            transform: translateX(-50%);
+            background: #fff;
+            border: 5px solid rgb(1, 82, 41);
+        }
+
+        nav>ul>li:hover ul {
+            display: block;
+        }
+
+        nav>ul>li ul li {
+            position: relative;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav>ul>li ul::before {
+            content: "";
+            position: absolute;
+            inset: -10px auto auto 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 20px;
+            height: 20px;
+            border: 5px solid rgb(1, 82, 41);
+            background: #fff;
+        }
+
+        nav>ul>li:nth-child(2) ul::before {
+            content: "";
+            position: absolute;
+            inset: -13px auto auto 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 30px;
+            height: 20px;
+            border: 4px solid rgb(1, 82, 41);
+            border-radius: 50%;
+            background: #fff;
+            z-index: 999;
+            box-sizing: border-box;
+        }
+
+        nav>ul>li:nth-child(3) ul::before {
+            content: "";
+            position: absolute;
+            inset: -12px auto auto 50%;
+            transform: translateX(-50%) rotate(90deg);
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgb(1, 82, 41);
+            background: #fff;
+
+        }
+
+
+        nav>ul>li:nth-child(4) ul::before {
+            content: "";
+            position: absolute;
+            inset: -16px auto auto 50%;
+            transform: translateX(-50%) rotate(180deg);
+            width: 30px;
+            height: 30px;
+            border: 4px solid rgb(1, 82, 41);
+            border-radius: 0px 0px 30px 30px;
+            background: #fff;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        Wrap-container : kebop case;
+        Wrap : pascal case;
+        Wrap_container : snake case;
+        WrapConainer : camel case;
+        Wrap_container-inner : BEM;
+     -->
+    <div class="wrap">
+        <header id="header">
+            <div class="container">
+                <h1>LOGO</h1>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="">menu01</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                                <li><a href="">smenu05</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">menu02</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                                <li><a href="">smenu05</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">menu03</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                                <li><a href="">smenu05</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">menu04</a>
+                            <ul>
+                                <li><a href="">smenu01</a></li>
+                                <li><a href="">smenu02</a></li>
+                                <li><a href="">smenu03</a></li>
+                                <li><a href="">smenu04</a></li>
+                                <li><a href="">smenu05</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+
+        <main>
+            <div class="main_visual">
+                main
+            </div>
+        </main>
+
+        <footer>
+            &copy; soonzi
+        </footer>
+    </div>
+</body>
+
+</html>
