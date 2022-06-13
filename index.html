@@ -192,10 +192,6 @@
                 <em>
                     <p>display: none, inline, inline-block, block</p>
                 </em>
-                <em>
-                    <p>display: none, inline, inline-block, block</p>
-                </em>
-
         </ul>
 
         <h2><i class="xi-library-books-o"></i>GRID SYSTEM</h2>
@@ -253,7 +249,6 @@
                 <em>
                     <p> ::before ::after / :nth-child(even) 짝수, :nth-child(odd) 홀수 </p>
                 </em>
-
         </ul>
 
         <h2><i class="xi-library-books-o"></i>Header</h2>
@@ -285,9 +280,52 @@
                     header nav 사이 로고 중앙 배치.ver
                 </p>
 
-
                 <em>
                     <p> display: flex / justify-content: space-between / line-height / text-align: center </p>
+                </em>
+
+        </ul>
+
+        <h2><i class="xi-library-books-o"></i>Slick</h2>
+        <ul>
+            <li>
+                <!-- 2020.06.13
+                * Slick의 초기세팅 방법
+                    - slick 홈페이지에서 다운받고 압축풀기
+                    - slick.css / slick.min.js 를 각 css, js 파일에 넣어 세팅
+
+                * 만약 jquery 파일이 없다면 releases.jquery.com 최신파일 다운. jQuery 1.x (1.12.4버전)
+
+                * slick을 잡을땐 주로 <div>보단 <figure>로 감싸준다.
+                  그 이유는 나중에 div로 했을 경우 하나하나 잡아주거나 class 이름을 줘야해서 귀찮어.
+
+                *slick의 화살표(이전, 다음)위치 정하는 법 2가지
+                    .main .slick-prev { left: 100px; }
+                        단점 => 간격 유지가 안되고 겹쳐지는 현상이 생김
+                        
+                    .main .slick-next { left: auto; right: 100px; }
+                        단점 => 반응형가서 반응X
+
+                *자주 쓰는 Slick 용어
+                - autoplay : boolean, 자동 스크롤 사용 여부
+                - arrows : boolean,이전/다음 버튼이 생성
+                - dots : boolean, 페이징 버튼 생성
+                - pauseOnHover : boolean, 마우스가 올라가면 멈춤
+                - autoplaySpeed : int, 슬라이드가 넘어가는 속도 / 1s = 1,000 기본이 300
+                - slidesToshow : int, 슬라이드를 몇 개 보여줄 것인지 정하는 것
+
+                *자바스크립트는 대문자 구별 꼭 해줄 것!
+
+                *높이를 주는 방법,auto: 100%
+                -->
+
+                <a href="./doc/slick01.html" target="_blank">Slick 01</a>
+                <p>
+                    슬릭 파헤쳐보기
+                </p>
+                <em>
+                    <p> Slick : autoplay, arrows, dots, pauseOnHover, autoplaySpeed, slidesToshow / position / transform
+                        / transition / z-index / animation</p>
                 </em>
 
         </ul>
