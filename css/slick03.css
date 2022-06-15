@@ -1,0 +1,162 @@
+#header {
+    line-height: 100px;
+    border: 1px solid #000;
+}
+
+#header .container {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#header .gnb>ul {
+    display: flex;
+    gap: 40px;
+}
+
+#header .gnb>ul a {
+    display: block;
+    padding: 0 20px;
+}
+
+/* line-height 말고 padding으로 간격을 줄 수도 있음~ */
+
+#main {
+    position: relative;
+}
+
+.main_slider figure {
+    position: relative;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+.main_slider .itm01 {
+    background-image: url(../img/mainvisual01.jpg);
+}
+
+.main_slider .itm02 {
+    background-image: url(../img/mainvisual02.jpg);
+}
+
+.main_slider .itm03 {
+    background-image: url(../img/mainvisual03.jpg);
+}
+
+
+.main_slider .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+}
+
+.main_slider figure .inner h2 {
+    font-size: 55px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on .inner h2 {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.7s;
+}
+
+
+.main_slider figure .inner p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 20px 0;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on .inner p {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.7s 1s;
+}
+
+.main_slider figure .inner a {
+    display: inline-block;
+    background: #333;
+    padding: 5px 15px 8px 15px;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on .inner a {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.7s 1.5s;
+}
+
+.main_visual .num {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-100%);
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/num.jpg);
+    background-position-y: 0;
+    margin: 0 0 0 600px;
+    transition: 1s;
+}
+
+.main_visual .custom_dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    background: #ddd;
+    display: flex;
+}
+
+.main_visual .custom_dots li {
+    position: relative;
+    flex: 1;
+}
+
+.main_visual .custom_dots li~li {
+    border-left: 1px solid #fff;
+}
+
+.main_visual .custom_dots li a {
+    position: relative;
+    display: block;
+    padding: 10px;
+}
+
+
+.main_visual .custom_dots li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #f00;
+}
+
+.main_visual .custom_dots li.on::before {
+    width: 100%;
+    transition: 2s;
+}
+
+.main_visual i {
+    font-size: 30px;
+    vertical-align: middle;
+}
