@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullpage 01</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/fullpage.min.css">
+    <style>
+        .section {
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 27px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+        }
+
+        .section.on h2 {
+            font-size: 60px;
+            transition: 1s;
+        }
+
+        .section p {
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        .fp-watermark {
+            display: none;
+        }
+
+
+        h1 {
+            position: fixed;
+            inset: 50px auto auto 50px;
+            z-index: 999;
+        }
+
+
+        .cover_toggle {
+            position: fixed;
+            inset: 50px 50px auto auto;
+            z-index: 1001;
+
+            padding: 5px;
+            background: #f7f7f7;
+            border-radius: 2px;
+            font-size: 16px;
+        }
+
+
+        .cover_toggle::after {
+            content: "\e91c";
+            font-family: 'xeicon';
+        }
+
+        .cover_toggle.on::after {
+            content: "\e921c";
+            font-family: 'xeicon';
+        }
+
+        .toTop {
+            position: fixed;
+            inset: auto 50px 50px auto;
+            z-index: 999;
+
+            padding: 5px;
+            background: #f7f7f7;
+            border-radius: 2px;
+            font-size: 16px;
+        }
+
+        nav {
+            position: fixed;
+            inset: 50% 50px auto auto;
+            z-index: 999;
+            transform: translateY(-50%);
+        }
+
+        nav>ul {
+            width: 50px;
+        }
+
+        nav>ul a {
+            position: relative;
+            display: block;
+            height: 13px;
+            font-size: 0;
+        }
+
+        nav>ul>li a::after {
+            content: "";
+            position: absolute;
+            inset: 50% 0 auto auto;
+            width: 20px;
+            height: 1px;
+            background: #333;
+            transition: 0.5s;
+            transform: translateY(-50%);
+        }
+
+        nav>ul>li.on a::after {
+            width: 100%;
+        }
+
+        #cover {
+            position: fixed;
+            inset: -100% auto auto 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background: #333;
+            color: #fff;
+            z-index: 1000;
+            transition: 0.75s;
+        }
+
+        #cover.on {
+            inset: 0 auto auto 0;
+        }
+
+        #cover a {
+            display: block;
+            line-height: 40px;
+            border-bottom: 1px solid #666;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="#p01">
+                2030 soonji's portfolio
+            </a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="#p01">portfolio01</a></li>
+                <li><a href="#p02">portfolio02</a></li>
+                <li><a href="#p03">portfolio03</a></li>
+                <li><a href="#p04">portfolio04</a></li>
+                <li><a href="#p05">portfolio05</a></li>
+            </ul>
+        </nav>
+        <div class="cover_toggle"></div>
+    </header>
+
+    <main id="portfolio">
+        <section class="section portfolio01">
+            <div class="inner">
+                <h2>01. Lorem, ipsum dolor.</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, perferendis!</p>
+            </div>
+        </section>
+        <section class="section portfolio02">
+            <div class="inner">
+                <h2>02. Lorem, ipsum dolor.</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, perferendis!</p>
+            </div>
+        </section>
+        <section class="section portfolio03">
+            <div class="inner">
+                <h2>03. Lorem, ipsum dolor.</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, perferendis!</p>
+            </div>
+        </section>
+        <section class="section portfolio04">
+            <div class="inner">
+                <h2>04. Lorem, ipsum dolor.</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, perferendis!</p>
+            </div>
+        </section>
+        <section class="section portfolio05">
+            <div class="inner">
+                <h2>05. Lorem, ipsum dolor.</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, perferendis!</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="cover">
+        <ul>
+            <li><a href="#p01">portfolio01</a></li>
+            <li><a href="#p02">portfolio02</a></li>
+            <li><a href="#p03">portfolio03</a></li>
+            <li><a href="#p04">portfolio04</a></li>
+            <li><a href="#p05">portfolio05</a></li>
+        </ul>
+    </div>
+
+
+    <footer id="footer">
+        <div class="toTop">
+            <a href="#p01">
+                <i class="xi-arrow-top"></i>
+            </a>
+        </div>
+    </footer>
+
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/fullpage.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#portfolio').fullpage({
+                anchors: ['p01', 'p02', 'p03', 'p04', 'p05'],
+                afterLoad: function (origin, destination, direction, trigger) {
+                    $('.section').eq(destination.index).addClass('on').siblings().removeClass('on');
+                    $('nav li').eq(destination.index).addClass('on').siblings().removeClass('on');
+                },
+
+            });
+
+            $('.cover_toggle , #cover a').on('click', function () {
+                $('.cover_toggle').toggleClass('on');
+                $('#cover').toggleClass('on');
+            });
+
+            $('#cover').on('wheel scroll', function (e) {
+                e.stopPropagation();
+            })
+
+            // $('#cover a').on('click', function () {
+            //     $('.cover_toggle').toggleClass('on');
+            //     $('#cover').toggleClass('on');
+            // })
+
+
+        })
+    </script>
+</body>
+
+</html>
