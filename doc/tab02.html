@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab 02</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <style>
+        .tab {
+            padding: 100px 0;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tab_menu {
+            display: flex;
+        }
+
+        .tab_menu>li {
+            flex: 1;
+        }
+
+
+
+        .tab_menu>li>a {
+            display: block;
+            line-height: 40px;
+            padding: 0 15px;
+            background: #f7f7f7;
+        }
+
+        .tab_menu>li.on a {
+            background: #333;
+            color: #fff;
+        }
+
+        .tab_menu>li~li {
+            border-left: 1px solid #fff;
+        }
+
+        .tab_content {
+            position: relative;
+        }
+
+        .tab_content>li {
+            position: absolute;
+            inset: 0 0 0 0;
+            visibility: hidden;
+            padding: 10px 0;
+        }
+
+        .tab_content>li.on {
+            visibility: visible;
+        }
+
+        .bbong {
+            padding: 200px 0;
+            background: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="tab">
+        <div class="container">
+            <ul class="tab_menu">
+                <li class="on">
+                    <a href="">menu01</a>
+                </li>
+                <li>
+                    <a href="">menu02</a>
+                </li>
+                <li>
+                    <a href="">menu03</a>
+                </li>
+            </ul>
+            <ul class="tab_content">
+                <li class="on">
+                    <div class="product_slider">
+                        <figure>
+                            <img src="../img/lesedilarona01.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona02.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona03.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona04.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona05.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona06.jpg" alt="">
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <div class="product_slider">
+                        <figure>
+                            <img src="../img/lesedilarona01.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona02.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona03.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona04.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona05.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona06.jpg" alt="">
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <div class="product_slider">
+                        <figure>
+                            <img src="../img/lesedilarona01.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona02.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona03.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona04.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona05.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="../img/lesedilarona06.jpg" alt="">
+                        </figure>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+    <section class="bbong"></section>
+
+
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/slick.min.js"></script>
+    <script>
+        $(function () {
+            $('.tab_menu>li>a').on('click', function (e) {
+                e.preventDefault();
+                //console.log($(this).parent().index());
+                var idx = $(this).parent().index();
+                $('.tab_content>li').removeClass('on');
+                $('.tab_content>li').eq(idx).addClass('on');
+                $('.tab_menu>li').removeClass('on');
+                $(this).parent().addClass('on');
+            });
+
+            $('.product_sider').slick({
+                slidesToShow: 5,
+            })
+        })
+    </script>
+</body>
+
+</html>
