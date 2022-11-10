@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header06 - 비주얼 위에 메뉴 겹쳐놓기</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <style>
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            line-height: 100px;
+            border-bottom: 1px solid rgba(225, 225, 225, 0.3);
+            color: #fff;
+            font-size: 17px;
+            z-index: 999;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 100px);
+            margin: 0 auto;
+        }
+
+        header nav>ul {
+            display: flex;
+            gap: 40px;
+        }
+
+        .main_slider {
+            position: relative;
+            height: 50vh;
+            background: url(../img/mainvisual01.jpg) no-repeat center center/cover;
+        }
+
+        .product {
+            padding: 100px 0;
+        }
+
+        .product .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product_slider figure {
+            padding: 0 15px;
+        }
+
+        .product_slider img {
+            max-width: 100%;
+        }
+
+        .product02 {
+            background: #f1f1f1;
+            padding: 100px 0;
+        }
+
+        .product_slider02 figure {
+            padding: 0 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>
+                <a href="/">
+                    <img src="../img/grafflogo.png" alt="">
+                </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="">menu01</a></li>
+                    <li><a href="">menu02</a></li>
+                    <li><a href="">menu03</a></li>
+                    <li><a href="">menu04</a></li>
+                    <li><a href="">menu05</a></li>
+                    <li><a href="">menu06</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="main_visual">
+        <div class="main_slider">
+
+        </div>
+    </section>
+
+    <section class="product">
+        <div class="container">
+            <div class="product_slider">
+                <figure>
+                    <img src="../img/lesedilarona01.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona02.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona03.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona04.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona05.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona06.jpg" alt="">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="product02">
+        <div class="container">
+            <div class="product_slider">
+                <figure>
+                    <img src="../img/lesedilarona01.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona02.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona03.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona04.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona05.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona06.jpg" alt="">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/slick.min.js"></script>
+    <script>
+        $(function () {
+            $('.product_slider').slick({
+                slidesToShow: 5,
+                centerMode: true,
+            });
+        })
+    </script>
+</body>
+
+</html>

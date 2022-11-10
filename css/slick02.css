@@ -14,27 +14,6 @@
     opacity: 1;
 }
 
-.slide01 .slick-dots {
-    margin: 30px 0;
-    text-align: center;
-}
-
-.slide01 .slick-dots li {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: #ddd;
-    margin: 0 15px;
-}
-
-.slide01 .slick-dots li.slick-active {
-    background: #369;
-}
-
-.slide01 .slick-dots button {
-    display: none;
-}
-
 .slide01 .slide_arrows i {
     position: absolute;
     top: 45%;

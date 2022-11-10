@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide - tab</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <style>
+        .tabCon {
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        .tabCon>div {
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .tabCon>div.on {
+            height: auto;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <ul class="tabMenu">
+            <li>menu01</li>
+            <li>menu02</li>
+        </ul>
+        <div class="tabCon">
+            <div class="on">
+                <div class="left">
+                    <figure>슬라이드01</figure>
+                    <figure>슬라이드02</figure>
+                    <figure>슬라이드03</figure>
+                    <figure>슬라이드04</figure>
+                </div>
+            </div>
+            <div>
+                <div class="right">
+                    <figure>두번째슬라이드01</figure>
+                    <figure>두번째슬라이드드02</figure>
+                    <figure>두번째슬라이드드03</figure>
+                    <figure>두번째슬라이드드04</figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/slick.min.js"></script>
+    <script>
+        $(function () {
+            $('.tabMenu>li').on('click', function () {
+                var idx = $(this).index();
+                $('.tabCon>div').removeClass('on')
+                $('.tabCon>div').eq(idx).addClass('on');
+            });
+            //$('.tabMenu>li').onclick(funtion (){}); .on('click', ~)이랑 같은말인데 이벤트 두개 쓰려면 두줄로 해야하니,,~
+
+
+            $('.left').slick();
+            $('.right').slick();
+
+
+
+        })
+    </script>
+</body>
+
+</html>

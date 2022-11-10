@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비주얼과 메뉴 겹치기</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <style>
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            line-height: 100px;
+            border-bottom: 1px solid rgba(225, 225, 225, 0.3);
+            z-index: 999;
+            color: #fff;
+            font-size: 17x;
+        }
+
+        header .container {
+            display: flex;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        header nav>ul {
+            display: flex;
+            gap: 50px;
+        }
+
+        .main_slider {
+            position: relative;
+            height: 50vh;
+            background: url(../img/mainvisual01.jpg) no-repeat center center/cover;
+        }
+
+
+        .product {
+            padding: 100px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>
+                <a href="/">
+                    <img src="../img/grafflogo.png" alt="">
+                </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="">menu01</a></li>
+                    <li><a href="">menu02</a></li>
+                    <li><a href="">menu03</a></li>
+                    <li><a href="">menu04</a></li>
+                    <li><a href="">menu05</a></li>
+                    <li><a href="">menu06</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main_visual">
+        <div class="main_slider">
+
+        </div>
+    </section>
+
+
+    <section class="product">
+        <div class="container">
+            <div class="product_slider">
+                <figure>
+                    <img src="../img/lesedilarona01.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona02.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona03.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona04.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona05.jpg" alt="">
+                </figure>
+                <figure>
+                    <img src="../img/lesedilarona06.jpg" alt="">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/slick.min.js"></script>
+</body>
+
+</html>

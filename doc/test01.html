@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>다단메뉴</title>
+    <title>풀다단메뉴</title>
     <style>
         * {
             margin: 0;
@@ -20,12 +20,11 @@
         a {
             color: inherit;
             text-decoration: none;
-
         }
 
         #header {
-            position: relative;
             line-height: 100px;
+            background: #ddd;
         }
 
         .container {
@@ -33,66 +32,78 @@
             width: 1200px;
             margin: 0 auto;
             justify-content: space-between;
+            display: relative;
         }
 
         nav>ul {
             display: flex;
-            gap: 120px;
+            gap: 30px;
             text-align: center;
         }
 
         nav>ul::before {
             content: "";
+            display: block;
+            width: 100%;
+            height: 210px;
+            background: #fff;
             position: absolute;
             top: 100px;
             left: 0;
-            width: 100%;
-            height: 210px;
-            background: rgb(255, 245, 108);
-            z-index: 999;
-            display: none;
+            z-index: 1;
+            /* display: none; */
+            height: 0;
+            transition: all 0.5s;
         }
-
-        nav>ul:hover::before {
-            display: block;
-        }
-
 
         nav>ul>li {
             position: relative;
+            width: 120px;
+        }
+
+        nav>ul ul {
+            position: absolute;
+            z-index: 2;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            height: 0;
+            overflow: hidden;
+            transition: all 0.5s;
+        }
+
+        nav>ul ul li {
+            line-height: 40px;
         }
 
         nav a {
             display: block;
         }
 
-
-        nav ul ul {
-            position: absolute;
-            top: 100px;
-            left: 0;
-            background: rgb(78, 236, 131);
-            z-index: 999;
-            display: none;
-            width: 150px;
-            line-height: 40px;
-            transform: translateX(-32%);
+        /*
+        nav > ul > li:hover ul,
+        nav > ul:hover::before {
+          display: block;
+        } */
+        nav>ul:hover ul,
+        nav>ul:hover::before {
+            height: 210px;
         }
 
         .main_visual {
-            position: relative;
             height: 500px;
-            background: rgb(76, 167, 228);
+            background: #333;
         }
     </style>
 </head>
 
 <body>
     <!-- 
-        Wrap-container : kebop case;
-        Wrap : pascal case;
-        Wrap_container : snake case;
-        WrapConainer : camel case;
+        Wrap-container : kebop case;(-으로 이어줌)
+        Wrap : pascal case;(첫글자 대문자)
+        Wrap_container : snake case;(_로 이어줌)
+        WrapConainer : camel case;(두번째 단어 첫글자 대문자)
         Wrap_container-inner : BEM;
      -->
     <div class="wrap">
